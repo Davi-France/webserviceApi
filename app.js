@@ -5,6 +5,10 @@ const bodyParser = require("body-parser");
 const app = express();
 app.use(bodyParser.json());
 
+app.get("/teste", (req, res) => {
+    res.send('logado');
+});
+
 app.post("/buscarPendentes", async (req, res) => {
     const { indicePagina, limitePagina, CodUsu } = req.body;
 
